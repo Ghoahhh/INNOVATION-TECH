@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Innovation Tech | Inicio</title>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html">
+                <img src="img/logo-icon.png" alt="">
+                <span>Innovation Tech</span>
+            </a>
+            <button id="menuButton" type="button" aria-label="Abrir menú">☰</button>
+            <ul id="menu">
+                <li><a class="active" href="index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+            </ul>
+            <div>
+                <button id="cartButton" type="button" aria-label="Abrir Carrito">🛒<span id="cartNum">0</span></button>
+                <details>
+                    <summary id="accountBtn">Cuenta ▾</summary>
+                    <div>
+                        <strong id="accountName">Invitado</strong>
+                        <section id="accountMenu">
+                            <button id="openLogin">Iniciar sesión</button>
+                            <button id="openRegister">Crear cuenta</button>
+                        </section>
+                        <section id="userMenu" hidden>
+                            <a href="dashboard.html">Mi perfil</a>
+                            <a href="dashboard.html#orders">Mis pedidos</a>
+                            <button id="logoutBtn">Cerrar sesión</button>
+                        </section>
+                    </div>
+                </details>
+            </div>
+        </nav>
+    </header>
+<main>
+    <section class="hero">
+        <div class="container">
+            <div>
+                <img src="img/logo-wordmark.png" alt="">
+                <h1>Compra tecnología fácil, rápido y seguro en nuestra tienda.</h1>
+                <p>
+                    Productos seleccionados para estudar, trabajar, gaming y estar
+                    conectado.
+                </p>
+            </div>
+            <aside class="card">
+                <h2>Tecnología práctica</h2>
+                <p>Compra desde cualquier dispositivo y administra tus pedidos en nuestra página</p>
+            </aside>
+        </div>
+    </section>
+    <section class="container">
+        
+        
+    </section>
+</main>
+        <h1>Innovation  Tech</h1>
+        <section class="login">
+            <h2>Iniciar sesion</h2>
+            <input type="text" id="user" placeholder="Documento/Correo">
+            <input type="text" id="password" placeholder="Contraseña">
+            <button onclick="login(user.value, password.value)">Entrar</button>
+        </section>
+        <dialog name="register">
+            <form name="register" class="card">
+                <button name="close" type="button" aria-label="Cerrar">×</button>
+                <h2>Crear cuenta</h2>
+                <section class="grid">
+                    <label>Nombres<input name="name" autocomplete="name" required></label>
+                    <label>Apellidos<input name="last_name" autocomplete="name" required></label>
+                    <label>Tipo de documento<input name="type_document" autocomplete="cc-type" required></label>
+                    <label>Número de documento<input name="document" autocomplete="cc-number" required></label>
+                    <label>Teléfono<input name="phone" required></label>
+                    <label>Ciudad<input name="city" required></label>
+                    <label>Dirección<input name="address" required></label>
+                    <label>Contraseña<input name="password" required></label>
+                    <label>Confirmar contraseña<input name="confirm_password" required></label>
+                </section>
+                <footer><button type="submit">Crear cuenta</button></footer>
+            </form>
+        </dialog>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy;2026 Mi Sitio Web. Todos los derechos reservados.</p><br>
+        </div>
+    </footer>
+</body>
+</html>

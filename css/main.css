@@ -1,0 +1,100 @@
+.container {
+    width: min(1180px, calc(100% -32px));
+    margin-inline: auto;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    background: #f4f4f4;
+    color: #222;
+}
+
+header{
+    width: 100%;
+    margin: 10px auto;
+    padding: 0;
+    background: white;
+}
+
+nav{
+    background-color:  #1f2937;
+}
+
+nav ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    list-style: none;
+    margin: 15px auto;
+    padding: 5px;
+}
+
+nav ul li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+nav ul li a:hover{
+    background-color: #2e8b57;
+}
+
+.login-container{
+    background: #f1f1f1;
+    padding: 35px;
+    border-radius: 10px;
+    text-align: left;
+    color: #222;
+    width: 300px;
+    margin: 50px auto;
+}
+
+.login-form input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #66d18f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-form button:hover{
+    background-color: #005a9e;
+}
+
+footer{
+    width: 100%;
+    margin: 10px auto;
+    background: #212121;
+    color: #bbb;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.redes{
+    margin-top: 10px;
+}
+
+.redes a img{
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+}

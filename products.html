@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Innovation Tech</title>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html">
+                <img src="img/logo-icon.png" alt="">
+                <span>Innovation Tech</span>
+            </a>
+            <button id="menuButton" type="button" aria-label="Abrir menú">☰</button>
+            <ul id="menu">
+                <li><a class="active" href="index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+            </ul>
+            <div>
+                <button id="cartButton" type="button" aria-label="Abrir Carrito">🛒<span id="cartNum">0</span></button>
+                <details>
+                    <summary id="accountBtn">Cuenta ▾</summary>
+                    <div>
+                        <strong id="accountName">Invitado</strong>
+                        <section id="accountMenu">
+                            <button id="openLogin">Iniciar sesión</button>
+                            <button id="openRegister">Crear cuenta</button>
+                        </section>
+                        <section id="userMenu" hidden>
+                            <a href="dashboard.html">Mi perfil</a>
+                            <a href="dashboard.html#orders">Mis pedidos</a>
+                            <button id="logoutBtn">Cerrar sesión</button>
+                        </section>
+                    </div>
+                </details>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <header>
+            <div class="container"></div>
+            <section class="container grid">
+                <aside class="card">
+                    <form name="filters">
+                        <h2>Filtros</h2>
+                        <label>Busar<input name="search" placeholder="Nombre del producto"></label>
+                        <label>Categoría<select name="type"><option value="all">Todas</option><option>Audio</option><option>Computadores</option><option>Gaming</option><option>Smartwatch</option><option>Carga</option></select></label>
+                        <label>Stock<select name="stock"><option value="all">Todos</option><option value="available">Disponibles</option><option value="low">Pocas unidades</option></select></label>
+                        <label>Precio<select name="price"><option value="all">Todos</option><option value="low">Menos de $200.000</option><option value="mid">$200.000 a $500.000</option><option value="high">Más de $500.000</option></select></label>
+                        <label>Orden<select name="sort"><option value="default">Por defecto</option><option value="price-low">Menor precio</option><option value="price-high">Mayor precio</option><option value="stock">Más stock</option></select></label>
+                    </form>
+                </aside>
+                <section aria-label="Catalog results">
+                    <header class="card">
+                        <div>
+                            <h2>Productos</h2>
+                            <p class="muted">Selecciona la vista que prefieras.</p>
+                            <nav aria-label="Product view">
+                                <button name="view" value="grid" type="button" aria-pressed="true">▦</button>
+                                <button name="view" value="list" type="button" aria-pressed="true">☰</button>
+                            </nav>
+                        </div>
+                    </header>
+                    <section aria-label="Products" aria-orientation="horizontal"></section>
+                </section>
+            </section>
+        </header>
+    </main>
+</body>
+</html>
