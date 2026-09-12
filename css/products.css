@@ -1,0 +1,107 @@
+.grid {
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    padding: 20px;
+    align-items: start;
+}
+
+.card {
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.grid,
+form,
+label {
+    display: grid;
+    gap: 20px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.muted {
+    color: var(--gray);
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.products.list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.products .card {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.products .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #00000025;
+}
+
+.products a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.products img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.products button {
+    padding: 8px 15px;
+    background: var(--secondary);
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.products button:hover,
+.products.list button:hover {
+    background: var(--primary);
+}
+
+.products.list .card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.products.list .card a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.products.list img {
+    height: 150px;
+    width: 120px;
+}
+
+.products.list h3,
+.products.list p {
+    margin: 4px 0;
+}
+
+.products.list button {
+    margin-left: auto;
+}

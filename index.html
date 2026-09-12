@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Innovation Tech | Inicio</title>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html">
+                <img src="../img/logo-icon.png" alt="">
+                <span>Innovation Tech</span>
+            </a>
+            <button name="menu" class="menu" type="button" aria-label="Abrir menú" aria-controls="mainMenu">☰</button>
+            <ul id="mainMenu">
+                <li><a class="active" href="index.html">Inicio</a></li>
+                <li><a href="./templates/products.html">Productos</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="cartButton" type="button" onclick="cart.showModal()">🛒<span id="cartNum">0</span></button>
+                <details>
+                    <summary id="accountBtn">Cuenta ▾</summary>
+                    <div>
+                        <strong id="accountName">Invitado</strong>
+
+                        <section id="accountMenu">
+                            <button id="openLogin" onclick="Login.showModal()">Iniciar sesión</button>
+                            <button id="openRegister" onclick="Register.showModal()">Crear cuenta</button>
+                        </section>
+                        <section id="userMenu" hidden>
+                            <a href="dashboard.html">Mi perfil</a>
+                            <a href="dashboard.html#orders">Mis pedidos</a>
+                            <button onclick="localStorage.clear(); return actualizarCuenta();">Cerrar sesión</button>
+                        </section>
+                    </div>
+                </details>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div>
+                    <img src="img/logo-wordmark.png" alt="">
+                    <h1>Compra tecnología fácil, rápido y seguro en nuestra tienda.</h1>
+                    <p>
+                        Productos seleccionados para estudar, trabajar, gaming y estar
+                        conectado.
+                    </p>
+                </div>
+                <aside class="card">
+                    <h2>Tecnología práctica</h2>
+                    <p>Compra desde cualquier dispositivo y administra tus pedidos en nuestra página</p>
+                </aside>
+            </div>
+        </section>
+        <section class="container">
+        </section>
+        <dialog id="Login">
+            <button class="close-button" type="button" onclick="Login.close()">×</button>
+            <h2>Iniciar sesion</h2>
+            <form class="login" onsubmit="login(this);">
+                <label>Tipo de documento<select name="type_document" required><option default>...</option><option value="cc">Cédula de Ciudadanía</option><option value="ce">Cédula de Extranjería</option><option value="nit">NIT</option><option value="passport">Passport</option><option value="ppt">PPT</option></select></label>
+                <label>Documento<input name="document" type="text" placeholder="Ingresa el documento" required></label>
+                <label>Contraseña<input name="password" type="password" placeholder="Ingresa la contraseña" required></label>
+                <footer><button type="submit">Entrar</button></footer>
+            </form>
+            <p>¿No tienes una cuenta? <a onclick="Login.close(); Register.showModal()">Crear cuenta</a></p>
+        </dialog>
+        <dialog id="Register">
+            <button class="close-button" type="button" onclick="Register.close()">×</button>
+            <h2>Crear cuenta</h2>
+            <form class="grid" onsubmit="register(this);">
+                    <label>Nombres<input name="name" type="text" autocomplete="given-name" required></label>
+                    <label>Apellidos<input name="last_name" type="text" autocomplete="family-name" required></label>
+                    <label>Correo<input name="email" type="email" autocomplete="email" required></label>
+                    <label>Teléfono<input name="phone" type="tel" autocomplete="tel" required></label>
+                    <label>Tipo de documento<select name="type_document" required><option default>...</option><option value="cc">Cédula de Ciudadanía</option><option value="ce">Cédula de Extranjería</option><option value="nit">NIT</option><option value="passport">Passport</option><option value="ppt">PPT</option></select></label>
+                    <label>Número de documento<input name="document" required></label>
+                    <label>Ciudad<select name="city" required><option default>...</option><option value="Bogota">Bogotá</option><option value="Medellin">Medellín</option><option value="Cali">Cali</option><option value="Barranquilla">Barranquilla</option><option value="Cartagena">Cartagena</option></select></label>
+                    <label>Dirección<input name="address" autocomplete="street-address" required></label>
+                    <label>Contraseña<input name="password" type="password" autocomplete="new-password" required></label>
+                    <label>Confirmar contraseña<input name="confirm_password" type="password" autocomplete="new-password" required></label>
+                    <footer><button type="submit">Crear cuenta</button></footer>
+            </form>
+            <p>¿Tienes una cuenta? <a onclick="Login.close(); Register.showModal()">Iniciar sesión</a></p>
+        </dialog>
+        <dialog class="cart" id="cart">
+            <button class="close-button" type="button" onclick="cart.close()">×</button>
+            <h2>Carrito</h2>
+            <div class="cartList" id="cartProducts"></div>
+            <div class="cart-sm">
+                <span>Subtotal $<strong id="subtotal">0</strong></span>
+                <span>Envío $<strong id="shipping">0</strong></span>
+                <span>Total $<strong id="total">0</strong></span>
+                <button type="button" id="checkout">Finalizar compra</button>
+            </div>
+        </dialog>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy;2026 Mi Sitio Web. Todos los derechos reservados.</p><br>
+            <p>Nuetras formas de contacto:</p>
+        </div>
+    </footer>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>

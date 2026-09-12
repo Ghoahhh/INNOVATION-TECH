@@ -1,0 +1,26 @@
+{
+  "name": "innovation-tech-main",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000I\u0000N\u0000N\u0000O\u0000V\u0000A\u0000T\u0000I\u0000O\u0000N\u0000-\u0000T\u0000E\u0000C\u0000H\u0000",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node /js/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ghoahhh/INNOVATION-TECH.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ghoahhh/INNOVATION-TECH/issues"
+  },
+  "homepage": "https://github.com/Ghoahhh/INNOVATION-TECH#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.23.3"
+  }
+}

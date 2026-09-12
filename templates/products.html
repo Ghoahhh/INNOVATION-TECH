@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <title>Productos | Innovation Tech</title>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html">
+                <img src="../img/logo-icon.png" alt="">
+                <span>Innovation Tech</span>
+            </a>
+            <button name="menu" class="menu" type="button" aria-label="Abrir menú" aria-controls="mainMenu">☰</button>
+            <ul id="mainMenu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a class="active" href="products.html">Productos</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="cartButton" type="button" onclick="cart.showModal()">🛒<span id="cartNum">0</span></button>
+                <details>
+                    <summary id="accountBtn">Cuenta ▾</summary>
+                    <div>
+                        <strong id="accountName">Invitado</strong>
+
+                        <section id="accountMenu">
+                            <button id="openLogin" onclick="Login.showModal()">Iniciar sesión</button>
+                            <button id="openRegister" onclick="Register.showModal()">Crear cuenta</button>
+                        </section>
+                        <section id="userMenu" hidden>
+                            <a href="dashboard.html">Mi perfil</a>
+                            <a href="dashboard.html#orders">Mis pedidos</a>
+                            <button onclick="localStorage.clear(); return actualizarCuenta();">Cerrar sesión</button>
+                        </section>
+                    </div>
+                </details>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <header class="hero">
+            <section class="grid">
+                <aside class="card">
+                    <form>
+                        <h2>Filtros</h2>
+                        <label>Busar<input name="search" placeholder="Nombre del producto"></label>
+                        <label>Categoría<select name="type"><option value="all">Todas</option><option>Audio</option><option>Computadores</option><option>Gaming</option><option>Smartwatch</option><option>Carga</option></select></label>
+                        <label>Stock<select name="stock"><option value="all">Todos</option><option value="available">Disponibles</option><option value="low">Pocas unidades</option></select></label>
+                        <label>Precio<select name="price"><option value="all">Todos</option><option value="low">Menos de $200.000</option><option value="mid">$200.000 a $500.000</option><option value="high">Más de $500.000</option></select></label>
+                        <label>Orden<select name="sort"><option value="default">Por defecto</option><option value="price-low">Menor precio</option><option value="price-high">Mayor precio</option><option value="stock">Más stock</option></select></label>
+                    </form>
+                </aside>
+                <section>
+                    <header class="card">
+                        <div>
+                            <h2>Productos</h2>
+                            <p class="muted">Selecciona la vista que prefieras.</p>
+                            <nav aria-label="Product">
+                                <button name="view" value="grid" type="button" onclick="document.getElementById('products').className='products'">▦</button>
+                                <button name="view" value="list" type="button" onclick="document.getElementById('products').className='products list'">☰</button>
+                            </nav>
+                        </div>
+                    </header>
+                    <section id="products" class="products"></section>
+                </section>
+            </section>
+        </header>
+        <dialog id="Login">
+            <button class="close-button" type="button" onclick="Login.close()">×</button>
+            <h2>Iniciar sesion</h2>
+            <form class="login" onsubmit="login(this); return false;">
+                <label>Tipo de documento<select name="type_document" required><option default>...</option><option value="cc">Cédula de Ciudadanía</option><option value="ce">Cédula de Extranjería</option><option value="nit">NIT</option><option value="passport">Passport</option><option value="ppt">PPT</option></select></label>
+                <label>Documento<input name="document" type="text" required></label>
+                <label>Contraseña<input name="password" type="password" required></label>
+                <footer><button type="submit">Entrar</button></footer>
+            </form>
+        </dialog>
+        <dialog id="Register">
+            <button class="close-button" type="button" onclick="Register.close()">×</button>
+            <h2>Crear cuenta</h2>
+            <form class="grid" onsubmit="register(this); return false;">
+                    <label>Nombres<input name="name" type="text" autocomplete="given-name" required></label>
+                    <label>Apellidos<input name="last_name" type="text" autocomplete="family-name" required></label>
+                    <label>Correo<input name="email" type="email" autocomplete="email" required></label>
+                    <label>Teléfono<input name="phone" type="tel" autocomplete="tel" required></label>
+                    <label>Tipo de documento<select name="type_document" required><option default>...</option><option value="cc">Cédula de Ciudadanía</option><option value="ce">Cédula de Extranjería</option><option value="nit">NIT</option><option value="passport">Passport</option><option value="ppt">PPT</option></select></label>
+                    <label>Número de documento<input name="document" required></label>
+                    <label>Ciudad<select name="city" required><option default>...</option><option value="Bogota">Bogotá</option><option value="Medellin">Medellín</option><option value="Cali">Cali</option><option value="Barranquilla">Barranquilla</option><option value="Cartagena">Cartagena</option></select></label>
+                    <label>Dirección<input name="address" autocomplete="street-address" required></label>
+                    <label>Contraseña<input name="password" type="password" autocomplete="new-password" required></label>
+                    <label>Confirmar contraseña<input name="confirm_password" type="password" autocomplete="new-password" required></label>
+                    <footer><button type="submit">Crear cuenta</button></footer>
+            </form>
+        </dialog>
+        <dialog class="cart" id="cart">
+            <button class="close-button" type="button" onclick="cart.close()">×</button>
+            <h2>Carrito</h2>
+            <div class="cartList" id="cartProducts"></div>
+            <div class="cart-sm">
+                <span>Subtotal $<strong id="subtotal">0</strong></span>
+                <span>Envío $<strong id="shipping">0</strong></span>
+                <span>Total $<strong id="total">0</strong></span>
+                <button type="button" id="checkout">Finalizar compra</button>
+            </div>
+        </dialog>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy;2026 Mi Sitio Web. Todos los derechos reservados.</p><br>
+            <p>Nuetras formas de contacto:</p>
+        </div>
+    </footer>
+    <script src="../js/app.js"></script>
+    <script src="../js/products.js"></script>
+</body>
+</html>
