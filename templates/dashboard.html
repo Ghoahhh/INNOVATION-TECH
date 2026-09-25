@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <title>Dashboard | Innovation Tech</title>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html">
+                <img src="../img/logo-icon.png" alt="">
+                <span>Innovation Tech</span>
+            </a>
+            <button name="menu" class="menu" type="button" aria-label="Abrir menú" aria-controls="mainMenu">☰</button>
+            <ul id="mainMenu" class="open">
+                <li><a class="active" href="index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+            </ul>
+            <div>
+                <button id="cartButton" type="button" aria-label="Abrir Carrito">🛒<span id="cartNum">0</span></button>
+            </div>
+        </nav>
+    </header>
+    <main class="hero">
+    </main>
+        <dialog class="cart" id="cart">
+            <button class="close-button" type="button" onclick="cart.close()">×</button>
+            <h2>Carrito</h2>
+            <div class="cartList" id="cartProducts"></div>
+            <div class="cart-sm">
+                <span>Subtotal $<strong id="subtotal">0</strong></span>
+                <span>Envío $<strong id="shipping">0</strong></span>
+                <span>Total $<strong id="total">0</strong></span>
+                <button type="button" id="checkout">Finalizar compra</button>
+            </div>
+        </dialog>
+    <footer>
+        <div class="container">
+            <p>&copy;2026 Mi Sitio Web. Todos los derechos reservados.</p><br>
+            <p>Nuetras formas de contacto:</p>
+        </div>
+    </footer>
+
+    <script src="../js/products.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+header {
+    position: fixed;
+    width: 220px;
+    height: 100vh;
+}
+
+nav {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 10px 0;
+}
+
+main {
+    margin-left: 220px;
+    padding: 30px;
+}
+
+main section {
+    display: none;
+}
+
+main section:target {
+    display: block;
+}
+
+.products {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.products .card {
+    padding: 15px;
+}
+
+.card button {
+    flex: 1;
+}
+
+#productsImg,
+.products img {
+    height: 90px;
+}
+
+.products h3 {
+    margin: 6px 0;
+    font-size: 13px;
+}
+
+.products button {
+    margin-top: 7px;
+    padding: 6px 10px;
+}
+
+.grid {
+    grid-template-columns: 1fr 290px;
+    gap: 20px;
+    align-items: start;
+}
+
+form[hidden] {
+    display: none;
+}
+
+form {
+    position: sticky;
+    top: 20px;
+    gap: 8px;
+    padding: 14px;
+}
+
+form label {
+    display: grid;
+    gap: 3px;
+    font-size: 12px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px;
+    
+    font: inherit;
+}
+
+form textarea {
+    height: 70px;
+    resize: none;
+}
+
+form button {
+    padding: 8px;
+    margin-top: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-size: 13px;
+}
+
+td {
+    font-size: 12px;
+}
+
+td button {
+    padding: 6px 9px;
+    margin-right: 4px;
+}
+
+@media (max-width: 760px) {
+    #menuButton {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+        width: 100%;
+    }
+
+    #menu.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        position: sticky;
+        width: 100%;
+        height: auto;
+    }
+
+    nav {
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+}
