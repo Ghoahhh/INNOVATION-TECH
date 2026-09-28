@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>Panel Administrativo | Innovation Tech </title>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html">
+                <img src="../img/logo-icon.png" alt="">
+                <span>Panel Tech</span>
+            </a>
+            <button id="menuButton" type="button" onclick="document.getElementById('menu').classList.toggle('show')" aria-label="Abrir menú">☰</button>
+            <ul id="menu">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#users" onclick="load('users')">Users</a></li>
+                <li><a href="#products" onclick="load('products')">Productos</a></li>
+                <li><a href="#orders" onclick="load('orders')">Pedidos</a></li>
+                <li><a href="#roles" onclick="load('roles')">Roles</a></li>
+            </ul>
+            <div class="nav-actions">
+                <details>
+                    <summary id="accountBtn">Cuenta ^</summary>
+                    <div>
+                        <strong id="accountName">Invitado</strong>
+                        
+                        <section id="accountMenu">
+                            <button id="openLogin" onclick="Login.showModal()">Iniciar sesión</button>
+                            <button id="openRegister" onclick="Register.showModal()">Crear cuenta</button>
+                        </section>
+                        <section id="userMenu" hidden>
+                            <a href="dashboard.html">Mi perfil</a>
+                            <a href="dashboard.html">Mis pedidos</a>
+                            <button onclick="logout();">Cerrar sesión</button>
+                        </section>
+                    </div>
+                </details>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div>
+                    <img src="../img/logo-wordmark.png" alt="">
+                    <h1>Compra tecnología fácil, rápido y seguro en nuestra tienda.</h1>
+                    <p>
+                        Productos seleccionados para estudar, trabajar, gaming y estar
+                        conectado.
+                    </p>
+                </div>
+                <aside class="card">
+                    <h2>Tecnología práctica</h2>
+                    <p>Compra desde cualquier dispositivo y administra tus pedidos en nuestra página</p>
+                </aside>
+            </div>
+        </section>
+        <div class="grid">
+            <section id="users">
+                    <div>
+                        <h2>Usuarios</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Documento</th>
+                                    <th>Nombres</th>
+                                    <th>Apellidos</th>
+                                    <th>Ciudad</th>
+                                    <th>Rol</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTable"></tbody>
+                        </table>
+                    </div>
+            </section>
+            <section id="products">
+                    <div>
+                        <h2>Products</h2>
+                        <p>Administra los productos</p>
+                        <button type="button" onclick="edit('product')">+ Agregar producto</button>
+                        <div id="productsList" class="products"></div>
+                    </div>
+            </section>
+            <section id="orders">
+                    <div>
+                        <h2>Ordenes</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Realizado</th>
+                                    <th>Entregado</th>
+                                    <th>Documento</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTable"></tbody>
+                        </table>
+                    </div>
+            </section>
+            <section id="roles">
+                    <div>
+                        <h2>Roles</h2>
+                        <p>Administra los roles</p>
+                        <button type="button" onclick="edit('role')">+ Agregar rol</button>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rolesTable"></tbody>
+                        </table>
+                    </div>
+            </section>
+            <form id="form" class="card" hidden></form>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy;2026 Mi Sitio Web. Todos los derechos reservados.</p><br>
+            <p>Nuetras formas de contacto:</p>
+        </div>
+    </footer>
+
+    <script src="../js/admin.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

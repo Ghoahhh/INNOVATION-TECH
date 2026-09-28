@@ -1,0 +1,108 @@
+.grid { /**Esto va a pertenecer a la parte de los filtros y del filtro principal grande*/
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    padding: 20px;
+    align-items: start;
+}
+
+.card { /**En este se modifican los parametros del card que se encuentra en el main, para utilizarlo y acomodarlo al espacio de esta página*/
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.grid,
+form,
+label {
+    display: grid;
+    gap: 20px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.muted { /**El color que va a recibir mensajes que no son tan relevantes*/
+    color: var(--gray);
+}
+
+.products { /**La forma en la que se van a ver los productos una ves se esten colocando en orden en un tipo galeria*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.products.list { /**Este es la vista que va a tener los productos, en un tipo en listado*/
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.products .card { /**La transición que va a tener cuando se pone por encima el mause*/
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.products .card:hover { /**El efecto que va a tener la tarjeta del producto, su desplazamiento y la sombra*/
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #00000025;
+}
+
+.products a { /**Lo que deje el color del del link normal*/
+    color: inherit;
+    text-decoration: none;
+}
+
+.products img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.products button {
+    padding: 8px 15px;
+    background: var(--secondary);
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.products button:hover,
+.products.list button:hover { /**El botón que tiene la tarjeta de productos a la hora de pasar el mause por encima*/
+    background: var(--primary);
+}
+
+.products.list .card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.products.list .card a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.products.list img {
+    height: 150px;
+    width: 120px;
+}
+
+.products.list h3,
+.products.list p {
+    margin: 4px 0;
+}
+
+.products.list button {
+    margin-left: auto;
+}
+

@@ -1,0 +1,238 @@
+header { /**El encabezado en el que se va a arregalr la posición, la altura y el ancho*/
+    position: fixed;
+    width: 220px;
+    height: 100vh;
+}
+
+nav { /**Como se va a poder ver la barra de navegación*/
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+nav ul { /**El enlistado de la barra de navegación*/
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 10px 0;
+}
+
+main { /**La margen de la izquierda y el enpaginado que va a tener la página*/
+    margin-left: 220px;
+    padding: 30px;
+}
+
+main section {
+    display: none;
+}
+
+main section:target {
+    display: block;
+}
+
+.products { /**La forma en la que se van a poder ver los productos, en lo que se va van a cuadrar hasta 4 con una separación de 10px*/
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.products .card {
+    padding: 15px;
+}
+
+.card button {
+    flex: 1;
+}
+
+#formImg,
+.products img {
+    height: 100px;
+    display: block;
+    width: 100px;
+    object-fit: contain;
+    margin: 0 auto 20px; /**Nos va a permitir centrar la img, sin margen arriba, centrado horizontalmente y que deje espacio abajo*/
+}
+
+.products h3 {
+    margin: 6px 0;
+    font-size: 13px;
+}
+
+.products button {
+    margin-top: 7px;
+    padding: 6px 10px;
+}
+
+.grid {
+    grid-template-columns: 1fr 290px;
+    gap: 20px;
+    align-items: start;
+}
+
+form[hidden] {
+    display: none;
+}
+
+form { /**Esto va a permitir que el formulario siempre este presente aunque se este escroliando en la página*/
+    position: sticky;
+    top: 20px;
+    gap: 8px;
+    padding: 14px;
+}
+
+form label {
+    display: grid;
+    gap: 3px;
+    font-size: 12px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px;
+    
+    font: inherit;
+}
+
+form textarea {
+    height: 70px;
+    resize: none;
+}
+
+form button {
+    padding: 8px;
+    margin-top: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--white);
+}
+
+th {
+    font-size: 13px;
+}
+
+td {
+    font-size: 12px;
+}
+
+td button {
+    padding: 6px 9px;
+    margin-right: 4px;
+}
+
+#orderProducts {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#orderProducts article {
+    display: flex;
+    align-items: center;
+    gap: 15x;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--white);
+}
+
+#orderProducts img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.nav-actions { /**Nos va a poner el cuenta abajo*/
+    width: 100%;
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+.nav-actions details { /**Nos va a permitir posicionar el menú de la cuenta*/
+    position: relative;
+    width: 100%;
+}
+
+.nav-actions summary { /**Botón de cuenta*/
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-actions details div { /**Hace que el menú de la cuenta se abra para arriba*/
+    position: absolute;  /**Nos va a permitir hacer que el menú se abra desde arriba*/
+    top: auto; /**Evita que se use una posición desde arriba*/
+    bottom: 100%; /**Nos indica que ponga el menú 100% por encima del botón y además deja 10px de separación*/
+    left: 0; /**Va a alinear el botón con el lado izquierdo*/
+    width: 100%; /**Va a hacer que el menú tenga el mismo ancho que el botón*/
+    margin-bottom: 10px; /**Nos va dejar una pequeña separación entre el menú y el botón*/
+    box-sizing: border-box; /**Nos va a evitar que el padding o borddes aumenten el ancho*/
+}
+
+@media (max-width: 760px) {
+    #menuButton {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+        width: 100%;
+    }
+
+    #menu.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        position: sticky;
+        width: 100%;
+        height: auto;
+    }
+
+    nav {
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .nav-actions { /**Nos va a poner el cuenta abajo*/
+        width: 100%;
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+    .nav-actions details { /**Nos va a permitir posicionar el menú de la cuenta*/
+        width: auto;
+    }
+
+    .nav-actions summary { /**Botón de cuenta*/
+        width: auto;
+    }
+
+    .nav-actions summary div { /**Hace que el menú de la cuenta se abra para arriba*/
+        top: 45px;
+        bottom: auto;
+        left: auto;
+        right: 0;
+        width: 190px;
+    }
+
+}
